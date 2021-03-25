@@ -1,0 +1,367 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Commissioner', sans-serif;
+  color: hsl(0, 0%, 48%);
+  background-color: hsl(0, 0%, 95%);
+}
+
+h2, h3{
+  font-size: 16px;
+}
+h1, h2 {
+  color: hsl(0, 0%, 0%);
+}
+
+.section-styling{
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 0 22rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+
+/* heading */
+
+#heading {
+  background-image: url("images/image-hero-desktop.jpg");
+  height: 25rem;
+  width: 90rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 10rem 0 10rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 2rem;
+  color: white;
+}
+
+
+/* BACK THE PROJECT SECTION  */
+
+#section-heading {
+  position: relative;
+  bottom:5rem
+}
+
+#m-logo {
+  position: relative;
+  margin-bottom: -3rem;
+  bottom: 3rem;
+}
+
+.btn-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-btn {
+  background-color: hsl(176, 50%, 47%);
+  padding: 1.3rem 3rem;
+  border-radius: 5rem;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+}
+
+.bookmark-btn {
+  background: none;
+  border: none;
+  text-align: right;
+  
+}
+
+.bookmark-btn-text {
+  background-color: hsl(0, 0%, 69%, 0.33);
+  color: hsl(0, 0%, 48%);
+  padding: 1.3rem 2rem 1.3rem 4rem;
+  border-radius: 5rem;
+  position: relative;
+  bottom: 1.5rem;
+  right: 3.9rem;
+  margin-right: -3.9rem;
+  border: none;
+  z-index: 0;
+  font-weight: 700;
+}
+
+.bookmark-btn-text:hover {
+  cursor: pointer;
+}
+
+.bookmark-icon {
+  z-index: 1;
+}
+
+.bookmark-icon:hover {
+  fill: hsl(176, 72%, 28%);
+}
+
+.back-btn:hover {
+  background-color: hsl(176, 72%, 28%);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+
+/* FUND RAISING SECTION  */
+
+#fund {
+  margin-top:-3rem ;
+  margin-bottom: 1rem;
+}
+
+.fund-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.fund-box {
+  text-align: left;
+}
+
+.border {
+  margin-top: 1rem;
+  height: 4rem;
+  width: 1px;
+  background-color: #B1B1B1;
+}
+
+.progress-bar {
+  margin: auto;
+  width: 40rem;
+  height: 1rem;
+  background-color: #B1B1B1;
+  border-radius: 5rem;
+}
+
+.progress-fill{
+  width: 10rem;
+  height: 1rem;
+  background-color:  hsl(176, 50%, 47%);
+  border-radius: 5rem;
+}
+
+/* ABOUT SECTION  */
+
+#about {
+  margin-top: 2rem ;
+  margin-bottom: 1rem ;
+  text-align: left;
+}
+
+
+
+.card {
+  margin: 1rem 0;
+  border: solid 1px #B1B1B1;
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  color: hsl(176, 50%, 47%);
+}
+
+.item-left {
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+}
+/* OVERLAY */
+
+#overlay{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  top:0;
+  right: 0;
+  left: 0;
+  background-color: hsl(0, 0%, 0%, 0.5);
+}
+
+/* BACK POPUP SECTION */
+
+
+#back-popup {
+  display: none;
+  position: absolute;
+  top:10rem;
+  text-align: left;
+  z-index: 10;
+}
+
+.close-btn{
+  position: absolute;
+  top:2.5rem;
+  left: 42rem;
+  border: none;
+  background: none;
+}
+
+.select{
+  display: none;
+}
+
+
+
+.first-card > .card-container{
+  margin-top: 1rem;
+    justify-self: left;
+    padding:0;
+}
+
+
+.pledge-btn {
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.pledge-input {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 5rem;
+  text-align: center;
+}
+
+.unit {
+  position: relative;
+  right: 5rem;
+}
+
+.pledge{
+  color: hsl(176, 50%, 47%);
+  font-size: 16px;
+  justify-self: left;
+}
+
+/* THANK YOU POPUP SECTION  */
+
+
+
+#thankyou {
+  display:none;
+  top:15rem;
+  position: fixed;
+  margin: 2rem 30rem 1rem 30rem;
+  text-align: center;
+  z-index: 10;
+}
+
+
+
+/* CHECKBOX CREATION */
+
+/* Customize the label (the container) */
+.checkbox-container {
+  flex-grow: 1;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+/* Hide the browser's default radio button */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color:#fff;
+  border-radius: 50%;
+  border: solid 1px #B1B1B1;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkbox-container .checkmark:after {
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background:hsl(176, 50%, 47%);
+}
+/* CHECKBOX CREATION  END*/
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
