@@ -6,7 +6,7 @@
 
 let fundRaised = 89914;
 let goal = 100000;
-let progressBarGoal = 40;
+let progressBarGoal = 100;
 let backers = 5007;
 const remainingDays = 56;
 
@@ -17,7 +17,7 @@ let progressBarFundRaised = (fundRaised * progressBarGoal) / goal;
 document.querySelector(".fund-raised").innerHTML = "$" + fundRaised;
 document.querySelector(".backers").innerHTML = backers;
 document.querySelector(".remaining-days").innerHTML = remainingDays;
-document.querySelector(".progress-fill").style.width = progressBarFundRaised+"rem";
+document.querySelector(".progress-fill").style.width = progressBarFundRaised+"%";
 
 // REMAINING ITEMS
 
@@ -62,7 +62,7 @@ updateStock();
 // open/close back pages
 
 
-document.querySelector(".backThisProject").addEventListener("click", function(){
+document.querySelector(".back-this-project").addEventListener("click", function(){
     document.querySelector("#back-popup").style.display = "block";
     document.querySelector("#overlay").style.display = "block";
 });
@@ -121,7 +121,24 @@ function changeColour(event){
         }
     }
 
+// HAMBURGER STYLE BUTTON FUNCTION 
 
+function changeHamburgerButton(x){
+    x.classList.toggle("change");
+    console.log
+    // document.querySelector(".menu-item").style.display = "list-item";
+    // document.querySelector(".menu-item").style.color = "black";
+    // document.querySelector(".menu-background").style.display = "block";
+    var menuBar = document.getElementById("my-menu");
+    console.log(menuBar.className)
+    if(menuBar.className === "menu"){
+        menuBar.className += " responsive";
+        
+    } else {
+        menuBar.className = "menu";
+    }
+
+}
 
 
 // OUT OF STOCK ITEMS
@@ -148,38 +165,43 @@ items.forEach(function(item){
 });
 
 
+function switchToChecked(event){
+    const checkbox = event.target.parentElement.parentElement.parentElement.parentElement.querySelector(".checkbox")
+    checkbox.checked = true;
+}
+
 // MAKE A PLEDGE 
 
 
 document.addEventListener("click", function(event){
     console.log(event)
 
+    // if(event.target.matches("#hamburger-btn")){
+    //     document.querySelector("li").style.display = "list-item";
+    //     document.querySelector("li").style.color = "black";
+    //     // document.querySelector(".menu-background").style.display = "block";
+    // }
 
     if(event.target.matches(".pledge-btn")){
         var path = event.target.parentElement.parentElement.parentElement;
         let input = parseInt(path.querySelector(".pledge-input").value);
         fundRaised = fundRaised + input;
         backers += 1;
-        console.log(path.className.slice(5,path.className.length));
-        console.log(path.className.slice(5, path.className.length)+"Item");
         items.forEach(function(item){
-            console.log("helle"+item);
             if(item.name === path.className.slice(5, path.className.length)){
              return item.stock = item.stock - 1;
                
             }
         });
         updateStock();
-        console.log(bambooItem.stock);
         progressBarFundRaised = (fundRaised * progressBarGoal) / goal;
-        if (progressBarFundRaised > 40){
-            progressBarFundRaised = 40;
+        if (progressBarFundRaised > progressBarGoal){
+            progressBarFundRaised = progressBarGoal;
         }
         
-        document.querySelector
         document.querySelector(".backers").innerHTML = backers;
         document.querySelector(".fund-raised").innerHTML = "$" + fundRaised;
-        document.querySelector(".progress-fill").style.width = progressBarFundRaised+"rem";
+        document.querySelector(".progress-fill").style.width = progressBarFundRaised+"%";
         document.querySelector("#back-popup").style.display = "none";
         document.querySelector("#thankyou").style.display = "block"; 
     }
@@ -193,11 +215,9 @@ document.addEventListener("click", function(event){
         document.querySelector("#overlay").style.display = "inline";
         const path = event.target.parentElement.parentElement.parentElement.className;
         const selector = path.slice(5, path.length);
-        console.log(path);
         document.querySelector("#back-popup").querySelector("."+selector).querySelector(".checkbox").checked = true;
         document.querySelector("#back-popup").querySelector("."+selector).style.borderColor = "hsl(176, 50%, 47%)";
         if(document.querySelector("#back-popup").querySelector("."+selector).querySelector(".select")){
-            console.log( document.querySelector("#back-popup").querySelector("."+selector).querySelector(".select"));
             document.querySelector("#back-popup").querySelector("."+selector).querySelector(".select").style.display = "flex";
         }
     }
@@ -206,6 +226,8 @@ document.addEventListener("click", function(event){
     if(event.target.matches(".checkbox")){
         changeColour(event);
     }
+
+   
 });
 
 

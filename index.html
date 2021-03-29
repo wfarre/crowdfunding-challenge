@@ -14,7 +14,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- link to our STYLES FILE -->
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles/button.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+
 
 </head>
 
@@ -30,17 +32,23 @@
             fill="#FFF" fill-rule="nonzero" /></svg>
       </div>
       <div class="nav-item">
-        <ul>
-          <li>About</li>
-          <li>Discover</li>
-          <li>Get Started</li>
-        </ul>
+        <div class="hamburger-btn" onclick="changeHamburgerButton(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <div class="menu" id="my-menu">
+          <a class="menu-item" href="">About</a>
+          <a class="menu-item" href="">Discover</a>
+          <a class="menu-item" href="">Get Started</a>
+        </div>
+
       </div>
     </div>
   </section>
 
 
-  <section id="section-heading" class="section-styling">
+  <section id="presentation-section" class="section-styling">
     <img id="m-logo" src="images/logo-mastercraft.svg" alt="">
 
     <h1>Mastercraft Bamboo Monitor Riser</h1>
@@ -50,7 +58,7 @@
 
     <div class="btn-container">
       <div class="btn-box">
-        <button class="back-btn btn backThisProject">Back this project</button>
+        <button class="back-btn btn back-this-project">Back this project</button>
       </div>
       <div clicked=0 class="btn-box bookmark">
         <div>
@@ -73,7 +81,7 @@
   </section>
 
 
-  <section id="fund" class="section-styling">
+  <section id="fund-section" class="section-styling">
     <div class="fund-container">
       <div class="fund-box">
         <h1 class="fund-raised">$</h1>
@@ -111,7 +119,7 @@
     <div class="card bamboo">
       <div class="card-container">
         <h2>Bamboo Stand</h2>
-        <h3>Pledge $25 or more</h3>
+        <h3 class="pledge">Pledge $25 or more</h3>
       </div>
       <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
         you’ll be added to a special Backer member list.</p>
@@ -175,16 +183,16 @@
       <!-- create a container to separate the checkbox from the title, text  -->
 
       <div class="card-container">
-        <label  class="checkbox-container"> 
-          <input class="checkbox" type="radio" name="radio"/>
+        <label class="checkbox-container">
+          <input class="checkbox" type="radio" name="radio" />
           <span class="checkmark"></span>
         </label>
-        <div>
-          <h2>Pledge with no reward</h2>
-      <p>Choose to support us without a reward if you simply believe in our project. As a backer,
-        you will be signed up to receive product updates via email.</p>
+        <div class="card-container card-title">
+          <h2 class="product-title">Pledge with no reward</h2>
+          <p>Choose to support us without a reward if you simply believe in our project. As a backer,
+            you will be signed up to receive product updates via email.</p>
+        </div>
       </div>
-    </div>
     </div>
 
     <!-- SECOND CARD  -->
@@ -192,17 +200,16 @@
       <!-- create a container to separate the checkbox from the title, text  -->
       <div class="card-container">
         <label class="checkbox-container">
-          <input class="checkbox" type="radio" name="radio" onfocus="changeColour(event)"/>
+          <input class="checkbox" type="radio" name="radio" onfocus="changeColour(event)" />
           <span class="checkmark"></span>
         </label>
-        <div>
-          <!-- create a container for text, item left, pledge -->
-          <div class="card-container">
-            <h2>Bamboo Stand</h2> 
-            <h3 class="pledge">Pledge $75 or more</h3>
-            <p><span class="item-left bambooStock"></span> left</p>
-          </div>
-          <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+        <!-- create a container for text, item left, pledge -->
+        <div class="card-container card-title">
+          <h2 class="product-title">Bamboo Stand</h2>
+          <h3 class="pledge">Pledge $25 or more</h3>
+          <p class="stock"><span class="item-left bambooStock"></span> left</p>
+          <p class="description">You get an ergonomic stand made of natural bamboo. You've helped us launch our
+            promotional campaign, and
             you’ll be added to a special Backer member list.</p>
         </div>
       </div>
@@ -212,7 +219,8 @@
           <p>Enter your pledge</p>
         </div>
         <div class="card-box">
-          <input class="pledge-input" type="number" min="25" placeholder="25" value="25"></input><span class="unit">$</span>
+          <input class="pledge-input" type="number" min="25" placeholder="25" value="25"></input><span
+            class="unit">$</span>
           <button class="back-btn pledge-btn btn">Continue</button>
         </div>
       </div>
@@ -225,15 +233,14 @@
       <div class="card-container">
         <!-- create a container to separate the checkbox from the title, text  -->
         <label class="checkbox-container">
-          <input class="checkbox" type="radio" name="radio" onfocus="changeColour(event)"/>
+          <input class="checkbox" type="radio" name="radio" onfocus="changeColour(event)" />
           <span class="checkmark"></span>
         </label>
-        <div>
-          <!-- create a container for text, item left, pledge -->
-          <div class="card-container">
-            <h2>Black Edition Stand   <span class="pledge">Pledge $75 or more</span></h2>
-            <p><span class="item-left blackStock"></span> left</p>
-          </div>
+        <!-- create a container for text, item left, pledge -->
+        <div class="card-container card-title">
+          <h2 class="product-title">Black Edition Stand </h2>
+          <h3 class="pledge">Pledge $75 or more</h3>
+          <p class="stock"><span class="item-left blackStock"></span> left</p>
           <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
             member list. Shipping is included.</p>
         </div>
@@ -244,8 +251,8 @@
           <p>Enter your pledge</p>
         </div>
         <div class="card-box">
-          <input  class="pledge-input" type="number" min="75" placeholder="75" value="75"><span class="unit">$</span>
-          <button type="submit" class="back-btn pledge-btn btn" >Continue</button></input>
+          <input class="pledge-input" type="number" min="75" placeholder="75" value="75"><span class="unit">$</span>
+          <button type="submit" class="back-btn pledge-btn btn">Continue</button></input>
         </div>
       </div>
       <!-- Selected pledge end -->
@@ -262,12 +269,11 @@
           <input class="checkbox" type="radio" name="radio" onfocus="changeColour(event)" />
           <span class="checkmark"></span>
         </label>
-        <div>
-          <!-- create a container for text, item left, pledge -->
-          <div class="card-container">
-            <h2>Mahogany Special Edition   <span class="pledge">Pledge $200 or more</span></h2>
-            <p><span class="item-left mahoganyStock"></span> left</p>
-          </div>
+        <!-- create a container for text, item left, pledge -->
+        <div class="card-container card-title">
+          <h2 class="product-title">Mahogany Special Edition </h2>
+          <h3 class="pledge">Pledge $200 or more</h3>
+          <p class="stock"><span class="item-left mahoganyStock"></span> left</p>
           <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
             to our Backer member list. Shipping is included.</p>
         </div>
@@ -279,7 +285,7 @@
         </div>
         <div class="card-box">
           <input class="pledge-input" type="number" min="200" placeholder="200" value="200"><span class="unit">$</span>
-          <button type="submit" class="back-btn pledge-btn btn" >Continue</button></input>
+          <button type="submit" class="back-btn pledge-btn btn">Continue</button></input>
         </div>
       </div>
     </div>
@@ -298,7 +304,7 @@
     <button class="back-btn thankyou-btn">Got it!</button>
   </section>
   <!-- Success modal end -->
-<div id="overlay"></div>
+  <div id="overlay"></div>
   <script src="./index.js"></script>
 </body>
 
